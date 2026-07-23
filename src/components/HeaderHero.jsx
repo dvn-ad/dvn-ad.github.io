@@ -20,7 +20,7 @@ export const HeaderHero = () => {
   };
 
   return (
-    <section className="hero-section section">
+    <section className="hero-section section" id="hero">
       <div className="container hero-grid">
         {/* Left Column: Developer Profile */}
         <div className="hero-profile-col">
