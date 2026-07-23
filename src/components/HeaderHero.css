@@ -1,0 +1,234 @@
+/* Header / Hero Section Styles */
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-profile-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--primary-amber);
+  background: rgba(255, 85, 0, 0.1);
+  border: 1px solid var(--border-rust);
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.badge-pulse {
+  width: 7px;
+  height: 7px;
+  background-color: var(--primary-amber);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--primary-amber);
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+
+.avatar-frame-wrapper {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 1.25rem;
+}
+
+.developer-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid var(--border-rust);
+  box-shadow: var(--shadow-card), var(--glow-amber);
+}
+
+.avatar-tech-overlay {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  background: var(--primary-amber);
+  color: var(--bg-espresso);
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glow-amber);
+}
+
+.hero-name {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.03em;
+}
+
+.hero-role {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  color: var(--primary-amber);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.hero-bio {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+/* API Window Right Column */
+.api-window {
+  background: var(--surface-slate);
+}
+
+.window-actions .env-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  background: rgba(250, 204, 21, 0.15);
+  color: var(--secondary-yellow);
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.api-execution-bar {
+  background: #141211;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-rust);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+}
+
+.endpoint-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bg-espresso);
+  border: 1px solid var(--border-rust);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.endpoint-url {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.execute-btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: var(--primary-amber);
+  color: var(--bg-espresso);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+  box-shadow: var(--glow-amber);
+}
+
+.execute-btn:hover:not(:disabled) {
+  background: #ff6a1a;
+  box-shadow: var(--glow-amber-strong);
+}
+
+.execute-btn.executing {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.response-status-bar {
+  background: rgba(28, 25, 23, 0.95);
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border-rust);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #22c55e;
+}
+
+.response-metrics {
+  display: flex;
+  gap: 1rem;
+  color: var(--text-secondary);
+}
+
+.code-display-area {
+  padding: 1.25rem;
+  max-height: 380px;
+  overflow-y: auto;
+  background: var(--bg-espresso);
+}
+
+.json-code-block {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.json-key {
+  color: var(--primary-amber);
+}
+
+.json-string {
+  color: var(--secondary-yellow);
+}
+
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-name {
+    font-size: 2.25rem;
+  }
+}

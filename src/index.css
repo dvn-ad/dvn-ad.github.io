@@ -1,0 +1,244 @@
+/* Solarized Amber & Industrial Rust (Retro-Futuristic) Design System */
+
+:root {
+  /* Color Palette */
+  --bg-espresso: #121010;
+  --surface-slate: #1C1917;
+  --surface-slate-hover: #262220;
+  --primary-amber: #FF5500;
+  --primary-amber-glow: rgba(255, 85, 0, 0.3);
+  --secondary-yellow: #FACC15;
+  --text-primary: #FAFAF9;
+  --text-secondary: #A8A29E;
+  --border-rust: #292524;
+  --border-rust-light: #3F3A36;
+  
+  /* Mac Window Dots */
+  --dot-red: #FF5F56;
+  --dot-amber: #FFBD2E;
+  --dot-green: #27C93F;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Shadow & Glow Effects */
+  --glow-amber: 0 0 15px rgba(255, 85, 0, 0.25);
+  --glow-amber-strong: 0 0 25px rgba(255, 85, 0, 0.45);
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg-espresso);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Retro subtle scanline / subtle dark grid background */
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(255, 85, 0, 0.08) 0%, transparent 60%),
+    linear-gradient(to right, rgba(41, 37, 36, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(41, 37, 36, 0.3) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-espresso);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-rust-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-amber);
+}
+
+/* Layout Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Section Common Styling */
+.section {
+  padding: 5rem 0;
+  border-bottom: 1px dashed var(--border-rust);
+}
+
+.section-header {
+  font-family: var(--font-mono);
+  color: var(--primary-amber);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.section-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--border-rust), transparent);
+}
+
+/* Mac Window Frame Standard */
+.mac-window {
+  background: var(--surface-slate);
+  border: 1px solid var(--border-rust);
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mac-window:hover {
+  border-color: var(--border-rust-light);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7), var(--glow-amber);
+}
+
+.window-bar {
+  background: #141211;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-rust);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.window-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background: var(--dot-red); }
+.dot-amber { background: var(--dot-amber); }
+.dot-green { background: var(--dot-green); }
+
+.window-title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Buttons System */
+.btn {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--primary-amber);
+  color: var(--bg-espresso);
+  border-color: var(--primary-amber);
+  box-shadow: var(--glow-amber);
+}
+
+.btn-primary:hover {
+  background-color: #ff6a1a;
+  box-shadow: var(--glow-amber-strong);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--surface-slate);
+  color: var(--text-secondary);
+  border-color: var(--border-rust);
+}
+
+.btn-secondary:hover {
+  color: var(--text-primary);
+  border-color: var(--primary-amber);
+  background-color: var(--surface-slate-hover);
+  box-shadow: var(--glow-amber);
+  transform: translateY(-2px);
+}
+
+.btn-rust {
+  background: transparent;
+  color: var(--primary-amber);
+  border: 1px solid var(--border-rust);
+}
+
+.btn-rust:hover {
+  background: rgba(255, 85, 0, 0.1);
+  border-color: var(--primary-amber);
+  box-shadow: var(--glow-amber);
+}
+
+/* Badges & Tags */
+.badge-post {
+  background: var(--primary-amber);
+  color: var(--bg-espresso);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.tech-tags {
+  font-family: var(--font-mono);
+  color: var(--secondary-yellow);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+  word-break: break-word;
+}
+
+/* Responsive Utilities */
+@media (max-width: 900px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+}
