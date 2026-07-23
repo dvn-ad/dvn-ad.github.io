@@ -46,9 +46,9 @@ export const ProjectsSection = () => {
                   <span className="dot dot-green"></span>
                 </div>
                 <div className="window-title">
-                  <Layers size={14} /> {project1.title.split('-')[0].trim()}.ext
+                  <Layers size={14} /> {project1.smalltitle}.ext
                 </div>
-                <span className="project-type-badge">TYPE: WEB_APP</span>
+                <span className="project-type-badge">TYPE: AI_DOCUMENT_PIPELINE</span>
               </div>
 
               <div className="project-card-body grid-2-col">
@@ -119,9 +119,9 @@ export const ProjectsSection = () => {
                   <span className="dot dot-green"></span>
                 </div>
                 <div className="window-title">
-                  <Smartphone size={14} /> {project2.title.split('-')[0].trim()}.ext
+                  <Smartphone size={14} /> {project2.smalltitle}.ext
                 </div>
-                <span className="project-type-badge">TYPE: EDGE_MOBILE</span>
+                <span className="project-type-badge">TYPE: DETERMINISTIC_AI_BACKEND</span>
               </div>
 
               <div className="project-card-body grid-2-col mobile-layout-reversed">
@@ -173,7 +173,7 @@ export const ProjectsSection = () => {
                 <div className="window-title">
                   <Cpu size={14} /> {project3.title.split('-')[0].trim()}.ext
                 </div>
-                <span className="project-type-badge">TYPE: HIGH_PERF_API</span>
+                <span className="project-type-badge">TYPE: COMMUNITY_WEB_PORTAL</span>
               </div>
 
               <div className="project-card-body grid-2-col">

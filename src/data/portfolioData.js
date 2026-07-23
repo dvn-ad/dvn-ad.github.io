@@ -1,74 +1,95 @@
 export const portfolioData = {
   developer: {
     name: "Davin Adiputra Suryolaksana",
-    role: "Back-End Developer & AI Engineer",
+    role: "Backend Architecture & AI Engineer",
     avatar: "/assets/avatar.jpg",
-    bio: "Architecting high-throughput distributed microservices, low-latency API gateways, and autonomous multi-agent AI execution pipelines. Passionate about system resilience, fault tolerance, and deterministic machine learning infrastructure.",
+    bio: "Passionate 3rd-year Informatics student at Sepuluh Nopember Institute of Technology (ITS) specializing in backend architecture and artificial intelligence engineering. Dedicated to mastering modern technologies, building scalable systems, and integrating intelligent models into production.",
     cvUrl: "/CV_ATS.pdf",
+    location: "Mulyorejo, Surabaya, East Java, Indonesia",
+    academics: {
+      institution: "Sepuluh Nopember Institute of Technology (ITS) – Surabaya",
+      degree: "Bachelor in Informatics Engineering",
+      period: "2024 – 2028 (expected)",
+      cgpa: "3.51 / 4.00"
+    },
     social: {
       github: "https://github.com/dvn-ad",
       linkedin: "https://linkedin.com/in/dvn-ad",
-      twitter: "https://twitter.com",
-      email: "davin.adisuryo@gmail.com"
+      email: "davin.adisuryo@gmail.com",
+      phone: "+6281315086622"
     }
   },
 
   skillsPayload: {
-    core_languages: ["Python", "Go", "TypeScript", "C++", "C"],
-    ai_agent_frameworks: ["LangChain", "LlamaIndex", "Google AGY SDK", "PyTorch", "vLLM", "FAISS"],
-    databases_infrastructure: ["PostgreSQL", "Redis", "Kafka", "Qdrant", "ClickHouse", "gRPC"],
-    cloud_devops: ["Kubernetes", "Docker", "Terraform", "AWS / GCP", "Prometheus", "CI/CD Pipelines"]
+    languages: ["Python", "Go", "Java", "C++", "C", "JavaScript", "HTML", "CSS", "SQL"],
+    frameworks_libraries: ["FastAPI", "Gin", "React", "Next.js", "Pydantic", "LayoutLMv3", "OpenCV", "XGBoost"],
+    databases_infrastructure: ["PostgreSQL", "MySQL", "Redis", "Supabase", "MongoDB", "Docker", "Git"],
+    cloud_platforms: ["Vercel", "Leapcell", "Railway", "AWS", "Google Sites"]
   },
+
+  certifications: [
+    {
+      title: "TryHackMe Pre-Security Learning Path",
+      description: "Foundational training covering core cybersecurity concepts, networking fundamentals, web system security, Linux/Windows operating systems, and basic defensive security."
+    },
+    {
+      title: "Dicoding: Belajar Machine Learning untuk Pemula",
+      description: "Completed machine learning training; building, evaluating, and optimizing classification, regression, and clustering models with hyperparameter tuning."
+    },
+    {
+      title: "Dicoding: Belajar Dasar Cloud dan Gen AI di AWS",
+      description: "Foundational cloud computing course covering AWS global infrastructure, core services, pricing models, and Generative AI basics."
+    }
+  ],
 
   projects: [
     {
       id: "project-1",
       type: "web",
-      title: "Nexus Core - Autonomous AI Agent Engine & Telemetry Mesh",
-      techStack: "Python // Go // FastAPI // Redis // PyTorch // Docker",
-      description: "An event-driven distributed system orchestrating multi-agent LLM workflows across heterogeneous clusters. Features real-time state synchronization, fault-tolerant execution graphs, dynamic rate-limiting, and an interactive telemetry analytics suite.",
+      title: "AI-Powered Customs Automation (OCR for CEISA 4.0)",
+      smalltitle:"LINTAS",
+      techStack: "Python // FastAPI // Next.js // OpenCV // LayoutLMv3 // Table Transformer // Ollama // XGBoost",
+      description: "National Semifinalist in the AI Open Innovation Challenge 2026 (Ministry for Economic Affairs & President Univ). Engineered an end-to-end document processing pipeline automating Indonesian customs declarations (PIB/PEB) for Cikarang Dryport. Integrated LayoutLMv3 for spatial semantic classification, Table Transformer for multi-column tables, Ollama + Pydantic schema-enforced LLM layer for CEISA 4.0 JSON payloads, and an XGBoost risk-scoring model with SHAP explanations.",
       screenshots: [
         {
           url: "/assets/project1-slide1.jpg",
-          caption: "Distributed AI Topology & Live Node Graph"
+          caption: "Customs Document Processing Pipeline & Field Classification"
         },
         {
           url: "/assets/project1-slide2.jpg",
-          caption: "API Health Gateway & Microservice Metrics Terminal"
+          caption: "CEISA 4.0 Schema Validation & SHAP Risk Scoring Dashboard"
         }
       ],
       links: {
-        demo: "https://nexus-demo.example.com",
-        github: "https://github.com/example/nexus-core"
+        github: "https://github.com/dvn-ad/LINTAS-HC"
       }
     },
     {
       id: "project-2",
-      type: "mobile",
-      title: "Vanguard Edge - Mobile Real-Time Industrial Diagnostics",
-      techStack: "React Native // Rust Edge Runtime // WebSockets // gRPC // SQLite",
-      description: "Offline-first edge telemetry and diagnostic monitor engineered for industrial environments. Leverages a local Rust native module for low-latency FFT sensor processing and streaming bi-directional gRPC metrics.",
+      type: "web",
+      title: "Bill Splitter - Deterministic AI Receipt Parser",
+      smalltitle:"Bill Splitter",
+      techStack: "Python // FastAPI // React // PostgreSQL // Redis // Gemini Vision API",
+      description: "Integrated Gemini Vision API via google-genai SDK to parse multi-currency receipt images into structured JSON. Engineered a Deterministic Calculation Engine using Pydantic v2 to intercept AI responses, eliminating LLM mathematical hallucinations by routing financial logic through an exact backend service.",
       mockupImage: "/assets/project2-mockup.jpg",
       links: {
-        github: "https://github.com/example/vanguard-mobile",
-        store: "https://store.example.com/vanguard"
+        github: "https://github.com/dvn-ad/bill-splitter"
       }
     },
     {
       id: "project-3",
-      type: "api",
-      title: "HyperGraph DB - Distributed Knowledge Graph API",
-      techStack: "Go // Rust // GraphQL // Qdrant Vector DB // RocksDB",
-      description: "High-concurrency GraphQL engine designed for hybrid relational-vector graph queries. Optimized for sub-10ms sub-graph traversal, automated embeddings sync, and zero-downtime schema migrations.",
+      type: "web",
+      title: "Community Service Project - Web Development for TK Tunas Pertiwi",
+      techStack: "Google Sites // Web Development // UX & Content Design",
+      description: "Designed and developed the school's web portal using Google Sites as part of a university community service project. Created and organized content highlighting school activities, facilities, programs, and contact information while collaborating directly with school representatives.",
       screenshots: [
         {
           url: "/assets/project1-slide2.jpg",
-          caption: "HyperGraph Execution Trace & Node Query Profiler"
+          caption: "TK Tunas Pertiwi School Information & Activities Portal"
         }
       ],
       links: {
-        github: "https://github.com/example/hypergraph-api",
-        docs: "https://docs.example.com/hypergraph"
+        demo: "https://sites.google.com"
       }
     }
   ]

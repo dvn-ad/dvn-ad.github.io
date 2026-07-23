@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { HeaderHero } from './components/HeaderHero';
 import { ProjectsSection } from './components/ProjectsSection';
+import { CertificationsSection } from './components/CertificationsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { Terminal, Code, Cpu, Mail } from 'lucide-react';
+import { Terminal, Code, Cpu, Award, Mail } from 'lucide-react';
 import './App.css';
 
 export function App() {
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
-    const sectionIds = ['hero', 'projects', 'contact'];
+    const sectionIds = ['hero', 'projects', 'certifications', 'contact'];
     const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
     const observerOptions = {
@@ -71,6 +72,13 @@ export function App() {
               <Cpu size={14} /> ~/ Projects.md
             </a>
             <a 
+              href="#certifications" 
+              className={`nav-item ${activeSection === 'certifications' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick(e, 'certifications')}
+            >
+              <Award size={14} /> ~/ Certifications.env
+            </a>
+            <a 
               href="#contact" 
               className={`nav-item ${activeSection === 'contact' ? 'active' : ''}`}
               onClick={(e) => handleNavClick(e, 'contact')}
@@ -85,6 +93,7 @@ export function App() {
       <main>
         <HeaderHero />
         <ProjectsSection />
+        <CertificationsSection />
         <ContactSection />
       </main>
 

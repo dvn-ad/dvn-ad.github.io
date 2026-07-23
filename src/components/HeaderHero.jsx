@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { FileText, Play, Terminal, CheckCircle2, Code2 } from 'lucide-react';
+import { FileText, Play, Terminal, CheckCircle2, Code2, GraduationCap } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import './HeaderHero.css';
 
@@ -42,6 +42,12 @@ export const HeaderHero = () => {
 
           <h1 className="hero-name">{developer.name}</h1>
           <h2 className="hero-role">&gt; {developer.role}</h2>
+          {developer.academics && (
+            <div className="academic-badge">
+              <GraduationCap size={15} />
+              <span>{developer.academics.institution} • CGPA {developer.academics.cgpa}</span>
+            </div>
+          )}
           
           <p className="hero-bio">{developer.bio}</p>
 
@@ -90,7 +96,7 @@ export const HeaderHero = () => {
             <div className="api-execution-bar">
               <div className="endpoint-wrapper">
                 <span className="badge-post">POST</span>
-                <span className="endpoint-url">https://alexmorgan.dev/api/v1/profile</span>
+                <span className="endpoint-url">https://dvn-ad.dev/api/v1/profile</span>
               </div>
               <button 
                 className={`execute-btn ${isExecuting ? 'executing' : ''}`}
