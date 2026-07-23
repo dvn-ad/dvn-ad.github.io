@@ -52,7 +52,7 @@ export function App() {
             onClick={(e) => handleNavClick(e, 'hero')}
           >
             <Terminal size={18} className="logo-icon" />
-            <span className="logo-text">ALEX_MORGAN // DEV_PORTFOLIO</span>
+            <span className="logo-text">DAVIN_ADIPUTRA // DEV_PORTFOLIO</span>
           </a>
 
           <nav className="nav-links">

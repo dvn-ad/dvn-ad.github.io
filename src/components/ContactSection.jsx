@@ -35,7 +35,7 @@ export const ContactSection = () => {
         payload: {
           status: "DISPATCHED",
           message_id: msgId,
-          recipient: "alex.morgan.dev@example.com",
+          recipient: "davin.adisuryo@gmail.com",
           sender: formData.email,
           latency: `${(Math.random() * 10 + 8).toFixed(1)}ms`
         }

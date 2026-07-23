@@ -46,7 +46,7 @@ export const HeaderHero = () => {
           <p className="hero-bio">{developer.bio}</p>
 
           <div className="hero-ctas">
-            <a href={developer.cvUrl} className="btn btn-primary" download>
+            <a href={developer.cvUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
               <FileText size={18} /> View CV
             </a>
             <a 

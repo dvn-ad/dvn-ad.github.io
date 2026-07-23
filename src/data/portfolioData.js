@@ -1,20 +1,20 @@
 export const portfolioData = {
   developer: {
-    name: "Alex Morgan",
-    role: "Lead Back-End Developer & AI Engineer",
+    name: "Davin Adiputra Suryolaksana",
+    role: "Back-End Developer & AI Engineer",
     avatar: "/assets/avatar.jpg",
     bio: "Architecting high-throughput distributed microservices, low-latency API gateways, and autonomous multi-agent AI execution pipelines. Passionate about system resilience, fault tolerance, and deterministic machine learning infrastructure.",
-    cvUrl: "#",
+    cvUrl: "/CV_ATS.pdf",
     social: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
+      github: "https://github.com/dvn-ad",
+      linkedin: "https://linkedin.com/in/dvn-ad",
       twitter: "https://twitter.com",
-      email: "alex.morgan.dev@example.com"
+      email: "davin.adisuryo@gmail.com"
     }
   },
 
   skillsPayload: {
-    core_languages: ["Python", "Go", "Rust", "TypeScript", "C++"],
+    core_languages: ["Python", "Go", "TypeScript", "C++", "C"],
     ai_agent_frameworks: ["LangChain", "LlamaIndex", "Google AGY SDK", "PyTorch", "vLLM", "FAISS"],
     databases_infrastructure: ["PostgreSQL", "Redis", "Kafka", "Qdrant", "ClickHouse", "gRPC"],
     cloud_devops: ["Kubernetes", "Docker", "Terraform", "AWS / GCP", "Prometheus", "CI/CD Pipelines"]
