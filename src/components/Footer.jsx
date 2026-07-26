@@ -1,7 +1,7 @@
 import React from 'react';
 import { portfolioData } from '../data/portfolioData';
 import { Terminal, Mail, Activity } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, TwitterIcon } from './Icons';
+import { GithubIcon, LinkedinIcon } from './Icons';
 import './Footer.css';
 
 export const Footer = () => {
@@ -36,9 +36,6 @@ export const Footer = () => {
           </a>
           <a href={developer.social.linkedin} target="_blank" rel="noreferrer" className="social-link" aria-label="LinkedIn">
             <LinkedinIcon size={18} />
-          </a>
-          <a href={developer.social.twitter} target="_blank" rel="noreferrer" className="social-link" aria-label="Twitter">
-            <TwitterIcon size={18} />
           </a>
           <a href={`mailto:${developer.social.email}`} className="social-link" aria-label="Email">
             <Mail size={18} />

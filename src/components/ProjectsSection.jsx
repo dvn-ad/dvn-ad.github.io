@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { ChevronLeft, ChevronRight, ExternalLink, Layers, Smartphone, Terminal, Cpu } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, Layers, Smartphone, Terminal, Cpu, ZoomIn } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import './ProjectsSection.css';
 
 export const ProjectsSection = () => {
   const { projects } = portfolioData;
+
+  // Lightbox Zoom State
+  const [zoomedImage, setZoomedImage] = useState(null);
 
   // Carousel State Management for Web Project 1
   const project1 = projects.find(p => p.id === 'project-1');
@@ -53,13 +56,16 @@ export const ProjectsSection = () => {
 
               <div className="project-card-body grid-2-col">
                 {/* Left: Interactive Carousel */}
-                <div className="carousel-container">
+                <div className="carousel-container zoomable-image-container" onClick={() => setZoomedImage(project1.screenshots[p1ActiveSlide])}>
                   <div className="carousel-slide-wrapper">
                     <img 
                       src={project1.screenshots[p1ActiveSlide].url} 
                       alt={project1.screenshots[p1ActiveSlide].caption} 
                       className="carousel-image"
                     />
+                    <div className="zoom-overlay">
+                      <ZoomIn size={24} />
+                    </div>
                     <div className="carousel-caption">
                       {project1.screenshots[p1ActiveSlide].caption}
                     </div>
@@ -126,13 +132,16 @@ export const ProjectsSection = () => {
 
               <div className="project-card-body grid-2-col">
                 {/* Left: Interactive Carousel (Single Image/Gif) */}
-                <div className="carousel-container">
+                <div className="carousel-container zoomable-image-container" onClick={() => setZoomedImage(project2.screenshots[0])}>
                   <div className="carousel-slide-wrapper">
                     <img 
                       src={project2.screenshots[0].url} 
                       alt={project2.screenshots[0].caption} 
                       className="carousel-image"
                     />
+                    <div className="zoom-overlay">
+                      <ZoomIn size={24} />
+                    </div>
                     <div className="carousel-caption">
                       {project2.screenshots[0].caption}
                     </div>
@@ -196,6 +205,17 @@ export const ProjectsSection = () => {
           )}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {zoomedImage && (
+        <div className="lightbox-overlay" onClick={() => setZoomedImage(null)}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <img src={zoomedImage.url} alt={zoomedImage.caption} className="lightbox-image" />
+            {zoomedImage.caption && <div className="lightbox-caption">{zoomedImage.caption}</div>}
+            <button className="lightbox-close" onClick={() => setZoomedImage(null)}>&times;</button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
