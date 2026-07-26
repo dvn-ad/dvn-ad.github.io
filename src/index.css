@@ -76,10 +76,10 @@ body {
 
 /* Layout Container */
 .container {
-  width: 100%;
-  max-width: 1240px;
+  width: 92%;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 /* Section Common Styling */
