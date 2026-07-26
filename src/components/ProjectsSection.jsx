@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { ChevronLeft, ChevronRight, ExternalLink, Layers, Smartphone, Terminal, Cpu, ZoomIn } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, Layers, Smartphone, Terminal, Cpu, ZoomIn, Play } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import './ProjectsSection.css';
 
@@ -99,6 +99,14 @@ export const ProjectsSection = () => {
                   <p className="project-description">{project1.description}</p>
 
                   <div className="project-actions">
+                    {project1.links?.video && (
+                      <button 
+                        onClick={() => setZoomedImage({ type: 'video', url: project1.links.video, caption: `${project1.title} - Video Demo` })} 
+                        className="btn btn-primary"
+                      >
+                        <Play size={16} /> Watch Demo
+                      </button>
+                    )}
                     {project1.links?.demo && (
                       <a href={project1.links.demo} target="_blank" rel="noreferrer" className="btn btn-primary">
                         <ExternalLink size={16} /> Live Demo
@@ -155,6 +163,14 @@ export const ProjectsSection = () => {
                   <p className="project-description">{project2.description}</p>
 
                   <div className="project-actions">
+                    {project2.links?.video && (
+                      <button 
+                        onClick={() => setZoomedImage({ type: 'video', url: project2.links.video, caption: `${project2.title} - Video Demo` })} 
+                        className="btn btn-primary"
+                      >
+                        <Play size={16} /> Watch Demo
+                      </button>
+                    )}
                     {project2.links?.demo && (
                       <a href={project2.links.demo} target="_blank" rel="noreferrer" className="btn btn-primary">
                         <ExternalLink size={16} /> Live Demo
@@ -193,6 +209,14 @@ export const ProjectsSection = () => {
                   <p className="project-description">{project3.description}</p>
 
                   <div className="project-actions">
+                    {project3.links?.video && (
+                      <button 
+                        onClick={() => setZoomedImage({ type: 'video', url: project3.links.video, caption: `${project3.title} - Video Demo` })} 
+                        className="btn btn-primary"
+                      >
+                        <Play size={16} /> Watch Demo
+                      </button>
+                    )}
                     {project3.links?.github && (
                       <a href={project3.links.github} target="_blank" rel="noreferrer" className="btn btn-rust">
                         <GithubIcon size={16} /> View Source
@@ -210,7 +234,18 @@ export const ProjectsSection = () => {
       {zoomedImage && (
         <div className="lightbox-overlay" onClick={() => setZoomedImage(null)}>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={zoomedImage.url} alt={zoomedImage.caption} className="lightbox-image" />
+            {zoomedImage.type === 'video' ? (
+              <iframe
+                src={zoomedImage.url}
+                title={zoomedImage.caption || "Video Demo"}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="lightbox-video"
+              ></iframe>
+            ) : (
+              <img src={zoomedImage.url} alt={zoomedImage.caption} className="lightbox-image" />
+            )}
             {zoomedImage.caption && <div className="lightbox-caption">{zoomedImage.caption}</div>}
             <button className="lightbox-close" onClick={() => setZoomedImage(null)}>&times;</button>
           </div>

@@ -57,7 +57,8 @@ export const portfolioData = {
         },
       ],
       links: {
-        github: "https://github.com/dvn-ad/LINTAS-HC"
+        github: "https://github.com/dvn-ad/LINTAS-HC",
+        video: "https://www.youtube.com/embed/ycyW_DlvIsk"
       }
     },
     {
