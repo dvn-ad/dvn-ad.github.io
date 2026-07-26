@@ -51,7 +51,12 @@ export const ProjectsSection = () => {
                 <div className="window-title">
                   <Layers size={14} /> {project1.smalltitle}.ext
                 </div>
-                <span className="project-type-badge">TYPE: AI_DOCUMENT_PIPELINE</span>
+                <div className="window-badges">
+                  {project1.achievement && (
+                    <span className="project-achievement-badge">ACHIEVEMENT: {project1.achievement}</span>
+                  )}
+                  <span className="project-type-badge">TYPE: AI_DOCUMENT_PIPELINE</span>
+                </div>
               </div>
 
               <div className="project-card-body grid-2-col">
@@ -96,7 +101,7 @@ export const ProjectsSection = () => {
                 <div className="project-info">
                   <h3 className="project-title">{project1.title}</h3>
                   <div className="tech-tags">{project1.techStack}</div>
-                  <p className="project-description">{project1.description}</p>
+                  <p className="project-description" dangerouslySetInnerHTML={{ __html: project1.description }}></p>
 
                   <div className="project-actions">
                     {project1.links?.video && (
@@ -135,7 +140,12 @@ export const ProjectsSection = () => {
                 <div className="window-title">
                   <Smartphone size={14} /> {project2.smalltitle}.ext
                 </div>
-                <span className="project-type-badge">TYPE: DETERMINISTIC_AI_BACKEND</span>
+                <div className="window-badges">
+                  {project2.achievement && (
+                    <span className="project-achievement-badge">ACHIEVEMENT: {project2.achievement}</span>
+                  )}
+                  <span className="project-type-badge">TYPE: DETERMINISTIC_AI_BACKEND</span>
+                </div>
               </div>
 
               <div className="project-card-body grid-2-col">
@@ -160,7 +170,7 @@ export const ProjectsSection = () => {
                 <div className="project-info">
                   <h3 className="project-title">{project2.title}</h3>
                   <div className="tech-tags">{project2.techStack}</div>
-                  <p className="project-description">{project2.description}</p>
+                  <p className="project-description" dangerouslySetInnerHTML={{ __html: project2.description }}></p>
 
                   <div className="project-actions">
                     {project2.links?.video && (
@@ -199,14 +209,19 @@ export const ProjectsSection = () => {
                 <div className="window-title">
                   <Cpu size={14} /> {project3.title.split('-')[0].trim()}.ext
                 </div>
-                <span className="project-type-badge">TYPE: COMMUNITY_WEB_PORTAL</span>
+                <div className="window-badges">
+                  {project3.achievement && (
+                    <span className="project-achievement-badge">ACHIEVEMENT: {project3.achievement}</span>
+                  )}
+                  <span className="project-type-badge">TYPE: COMMUNITY_WEB_PORTAL</span>
+                </div>
               </div>
 
               <div className="project-card-body">
                 <div className="project-info" style={{ padding: '1rem 0' }}>
                   <h3 className="project-title">{project3.title}</h3>
                   <div className="tech-tags">{project3.techStack}</div>
-                  <p className="project-description">{project3.description}</p>
+                  <p className="project-description" dangerouslySetInnerHTML={{ __html: project3.description }}></p>
 
                   <div className="project-actions">
                     {project3.links?.video && (

@@ -48,8 +48,9 @@ export const portfolioData = {
       type: "web",
       title: "AI-Powered Customs Automation (OCR for CEISA 4.0)",
       smalltitle:"LINTAS",
+      achievement: "NATIONAL_SEMIFINALIST",
       techStack: "Python // FastAPI // Next.js // OpenCV // LayoutLMv3 // Table Transformer // Ollama // XGBoost",
-      description: "National Semifinalist in the AI Open Innovation Challenge 2026 (Ministry for Economic Affairs & President Univ). Engineered an end-to-end document processing pipeline automating Indonesian customs declarations (PIB/PEB) for Cikarang Dryport. Integrated LayoutLMv3 for spatial semantic classification, Table Transformer for multi-column tables, Ollama + Pydantic schema-enforced LLM layer for CEISA 4.0 JSON payloads, and an XGBoost risk-scoring model with SHAP explanations.",
+      description: "National Semifinalist in the <a href=\"https://ai-open.president.ac.id/\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration: underline; color: inherit;\">AI Open Innovation Challenge 2026</a> (Ministry for Economic Affairs & President Univ). Engineered an end-to-end document processing pipeline automating Indonesian customs declarations (PIB/PEB) for Cikarang Dryport. Integrated LayoutLMv3 for spatial semantic classification, Table Transformer for multi-column tables, Ollama + Pydantic schema-enforced LLM layer for CEISA 4.0 JSON payloads, and an XGBoost risk-scoring model with SHAP explanations.",
       screenshots: [
         {
           url: "/assets/lintas-dashboard.png",
