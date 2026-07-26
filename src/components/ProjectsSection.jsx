@@ -36,7 +36,7 @@ export const ProjectsSection = () => {
         </h2>
 
         <div className="projects-list">
-          {/* PROJECT CARD 1: Web Application (Split: Screenshot Carousel Left, Info Right) */}
+          {/* PROJECT CARD 1: Web Application */}
           {project1 && (
             <div className="project-card web-project-card mac-window">
               <div className="window-bar">
@@ -99,7 +99,7 @@ export const ProjectsSection = () => {
                       </a>
                     )}
                     {project1.links?.github && (
-                      <a href={project1.links.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
+                      <a href={project1.links.github} target="_blank" rel="noreferrer" className="btn btn-rust">
                         <GithubIcon size={16} /> View Source
                       </a>
                     )}
@@ -109,9 +109,9 @@ export const ProjectsSection = () => {
             </div>
           )}
 
-          {/* PROJECT CARD 2: Mobile Application (Split: Info Left, Mobile Mockup Frame Right) */}
+          {/* PROJECT CARD 2: Web Application (Deterministic AI receipt parser - same layout as project 1) */}
           {project2 && (
-            <div className="project-card mobile-project-card mac-window">
+            <div className="project-card web-project-card mac-window">
               <div className="window-bar">
                 <div className="window-dots">
                   <span className="dot dot-red"></span>
@@ -124,44 +124,45 @@ export const ProjectsSection = () => {
                 <span className="project-type-badge">TYPE: DETERMINISTIC_AI_BACKEND</span>
               </div>
 
-              <div className="project-card-body grid-2-col mobile-layout-reversed">
-                {/* Left: Info */}
+              <div className="project-card-body grid-2-col">
+                {/* Left: Interactive Carousel (Single Image/Gif) */}
+                <div className="carousel-container">
+                  <div className="carousel-slide-wrapper">
+                    <img 
+                      src={project2.screenshots[0].url} 
+                      alt={project2.screenshots[0].caption} 
+                      className="carousel-image"
+                    />
+                    <div className="carousel-caption">
+                      {project2.screenshots[0].caption}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Info */}
                 <div className="project-info">
                   <h3 className="project-title">{project2.title}</h3>
                   <div className="tech-tags">{project2.techStack}</div>
                   <p className="project-description">{project2.description}</p>
 
                   <div className="project-actions">
+                    {project2.links?.demo && (
+                      <a href={project2.links.demo} target="_blank" rel="noreferrer" className="btn btn-primary">
+                        <ExternalLink size={16} /> Live Demo
+                      </a>
+                    )}
                     {project2.links?.github && (
                       <a href={project2.links.github} target="_blank" rel="noreferrer" className="btn btn-rust">
                         <GithubIcon size={16} /> View Source
                       </a>
                     )}
-                    {project2.links?.store && (
-                      <a href={project2.links.store} target="_blank" rel="noreferrer" className="btn btn-secondary">
-                        <ExternalLink size={16} /> Store Listing
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                {/* Right: Mobile Mockup Frame Carousel */}
-                <div className="mobile-frame-wrapper">
-                  <div className="mobile-phone-container">
-                    <div className="phone-screen">
-                      <img 
-                        src={project2.mockupImage} 
-                        alt={project2.title} 
-                        className="mobile-mockup-img"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
           )}
 
-          {/* PROJECT CARD 3: Distributed Knowledge API */}
+          {/* PROJECT CARD 3: Community Service Project */}
           {project3 && (
             <div className="project-card api-project-card mac-window">
               <div className="window-bar">
@@ -176,27 +177,18 @@ export const ProjectsSection = () => {
                 <span className="project-type-badge">TYPE: COMMUNITY_WEB_PORTAL</span>
               </div>
 
-              <div className="project-card-body grid-2-col">
-                <div className="carousel-container">
-                  <img 
-                    src={project3.screenshots[0].url} 
-                    alt={project3.screenshots[0].caption} 
-                    className="carousel-image"
-                  />
-                  <div className="carousel-caption">
-                    {project3.screenshots[0].caption}
-                  </div>
-                </div>
-
-                <div className="project-info">
+              <div className="project-card-body">
+                <div className="project-info" style={{ padding: '1rem 0' }}>
                   <h3 className="project-title">{project3.title}</h3>
                   <div className="tech-tags">{project3.techStack}</div>
                   <p className="project-description">{project3.description}</p>
 
                   <div className="project-actions">
-                    <a href={project3.links.github} target="_blank" rel="noreferrer" className="btn btn-rust">
-                      <GithubIcon size={16} /> View Source
-                    </a>
+                    {project3.links?.github && (
+                      <a href={project3.links.github} target="_blank" rel="noreferrer" className="btn btn-rust">
+                        <GithubIcon size={16} /> View Source
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

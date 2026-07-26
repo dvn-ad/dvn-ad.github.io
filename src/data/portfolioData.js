@@ -2,7 +2,7 @@ export const portfolioData = {
   developer: {
     name: "Davin Adiputra Suryolaksana",
     role: "Backend Architecture & AI Engineer",
-    avatar: "/assets/avatar.jpg",
+    avatar: "/assets/avatar.png",
     bio: "Passionate 3rd-year Informatics student at Sepuluh Nopember Institute of Technology (ITS) specializing in backend architecture and artificial intelligence engineering. Dedicated to mastering modern technologies, building scalable systems, and integrating intelligent models into production.",
     cvUrl: "/CV_ATS.pdf",
     location: "Mulyorejo, Surabaya, East Java, Indonesia",
@@ -52,13 +52,9 @@ export const portfolioData = {
       description: "National Semifinalist in the AI Open Innovation Challenge 2026 (Ministry for Economic Affairs & President Univ). Engineered an end-to-end document processing pipeline automating Indonesian customs declarations (PIB/PEB) for Cikarang Dryport. Integrated LayoutLMv3 for spatial semantic classification, Table Transformer for multi-column tables, Ollama + Pydantic schema-enforced LLM layer for CEISA 4.0 JSON payloads, and an XGBoost risk-scoring model with SHAP explanations.",
       screenshots: [
         {
-          url: "/assets/project1-slide1.jpg",
-          caption: "Customs Document Processing Pipeline & Field Classification"
+          url: "/assets/lintas-dashboard.png",
+          caption: "Customs Document Processing & Field Classification Dashboard"
         },
-        {
-          url: "/assets/project1-slide2.jpg",
-          caption: "CEISA 4.0 Schema Validation & SHAP Risk Scoring Dashboard"
-        }
       ],
       links: {
         github: "https://github.com/dvn-ad/LINTAS-HC"
@@ -71,7 +67,12 @@ export const portfolioData = {
       smalltitle:"Bill Splitter",
       techStack: "Python // FastAPI // React // PostgreSQL // Redis // Gemini Vision API",
       description: "Integrated Gemini Vision API via google-genai SDK to parse multi-currency receipt images into structured JSON. Engineered a Deterministic Calculation Engine using Pydantic v2 to intercept AI responses, eliminating LLM mathematical hallucinations by routing financial logic through an exact backend service.",
-      mockupImage: "/assets/project2-mockup.jpg",
+      screenshots: [
+        {
+          url: "/assets/bill-splitter-chat.gif",
+          caption: "Receipt Parsing & Bill Splitting Interface"
+        }
+      ],
       links: {
         github: "https://github.com/dvn-ad/bill-splitter"
       }
@@ -82,12 +83,6 @@ export const portfolioData = {
       title: "Community Service Project - Web Development for TK Tunas Pertiwi",
       techStack: "Google Sites // Web Development // UX & Content Design",
       description: "Designed and developed the school's web portal using Google Sites as part of a university community service project. Created and organized content highlighting school activities, facilities, programs, and contact information while collaborating directly with school representatives.",
-      screenshots: [
-        {
-          url: "/assets/project1-slide2.jpg",
-          caption: "TK Tunas Pertiwi School Information & Activities Portal"
-        }
-      ],
       links: {
         demo: "https://sites.google.com"
       }
